@@ -1,3 +1,5 @@
+const Product = require("../models/productModel");
+
 exports.getProducts = (req, res) => {
   res.status(200).send([
     {
@@ -12,6 +14,12 @@ exports.getProducts = (req, res) => {
 
 exports.getProductById = (req, res, next) => {
   const productId = req.params.id;
+
+  Product.findById(productId)
+    .then()
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 exports.postProduct = (req, res) => {};
