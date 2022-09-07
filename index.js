@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use("/home", shopRoutes);
+app.use("/api/v1", shopRoutes);
 
 app.listen(port, () => {
   console.log(`application running on port ${port}`);
