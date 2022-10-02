@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 var cors = require("cors");
-const shopRoutes = require("./Routes/router");
+const blogRoutes = require("./Routes/router");
 
 const app = express();
 const port = 3001;
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use("/api/v1", shopRoutes);
+app.use("/api/v1", blogRoutes);
 
 app.listen(port, () => {
   console.log(`application running on port ${port}`);

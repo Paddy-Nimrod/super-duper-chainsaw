@@ -1,21 +1,25 @@
-const Product = require("../models/productModel");
+const Post = require("../models/PostModel");
 
-exports.getProducts = (req, res) => {
+exports.getPosts = (req, res) => {
   res.status(200).send([
     {
       id: "1",
-      image: "https://m.media-amazon.com/images/I/81mmaolsY5L._UX522_.jpg",
-      name: "bag",
-      price: "Kshs.2000",
-      description: "this is the g-shock watch for exceptional quality",
+      title: "The Standard Media",
+      description: "the standard media to lay off new workers",
+    },
+    {
+      id: "2",
+      title: "New York times",
+      description:
+        " the news headlines from the ultra heading of the masai kingdom",
     },
   ]);
 };
 
-exports.getProductById = (req, res, next) => {
-  const productId = req.params.id;
+exports.getPostById = (req, res, next) => {
+  const postId = req.params.id;
 
-  Product.findById(productId)
+  Post.findById(postId)
     .then()
     .catch((error) => {
       console.log(error);
